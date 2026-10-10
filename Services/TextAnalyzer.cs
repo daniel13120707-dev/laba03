@@ -11,7 +11,7 @@ public sealed class TextAnalyzer
         _text = text ?? throw new ArgumentNullException(nameof(text));
     }
 
-    // 1. Предложения по возрастанию количества слов
+   
     public void PrintSentencesByWordCount()
     {
         Console.WriteLine("=== Предложения по возрастанию количества слов ===");
@@ -19,7 +19,7 @@ public sealed class TextAnalyzer
             Console.WriteLine($"[{sentence.WordCount} слов] {sentence}");
     }
 
-    // 2. Предложения по возрастанию длины
+
     public void PrintSentencesByLength()
     {
         Console.WriteLine("=== Предложения по возрастанию длины ===");
@@ -27,7 +27,7 @@ public sealed class TextAnalyzer
             Console.WriteLine($"[{sentence.Length} симв.] {sentence}");
     }
 
-    // 3. Слова заданной длины в вопросительных предложениях
+  
     public void PrintWordsInQuestions(int length)
     {
         Console.WriteLine($"=== Слова длины {length} в вопросительных предложениях ===");
@@ -41,21 +41,21 @@ public sealed class TextAnalyzer
             Console.WriteLine(w);
     }
 
-    // 4. Удаление слов заданной длины, начинающихся с согласной
+  
     public void RemoveWordsStartingWithConsonant(int length)
     {
         _text.RemoveWordsStartingWithConsonant(length);
         Console.WriteLine($"Удалены слова длины {length}, начинающиеся с согласной.");
     }
 
-    // 5. Замена слов заданной длины на подстроку
+   
     public void ReplaceWords(int length, string replacement)
     {
         _text.ReplaceWords(length, replacement);
         Console.WriteLine($"Слова длины {length} заменены на \"{replacement}\".");
     }
 
-    // 6. Удаление стоп-слов
+    
     public void RemoveStopWords(ISet<string> stopWords)
     {
         _text.RemoveStopWords(stopWords);
